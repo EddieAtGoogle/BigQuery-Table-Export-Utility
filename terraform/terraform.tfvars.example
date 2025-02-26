@@ -1,0 +1,38 @@
+# Google Cloud Project Configuration
+# ------------------------------------
+
+# The Google Cloud Project ID where resources will be created
+# This must be an existing project where you have sufficient permissions
+# Example: "my-bq-export-project"
+project_id = "my-project-id"
+
+# The Google Cloud region where resources will be deployed
+# Choose a region close to your users for better performance
+# See available regions: https://cloud.google.com/about/locations
+# Default: "us-central1" if not specified
+region = "us-central1"
+
+# Container Image Configuration
+# ------------------------------------
+
+# The container image to deploy to Cloud Run
+# This should be the full image path including registry and tag
+# Format: "REGISTRY/PROJECT-ID/IMAGE:TAG"
+# Examples:
+#   - From Artifact Registry: "us-central1-docker.pkg.dev/my-project/my-repo/bq-export-app:latest"
+#   - From Container Registry: "gcr.io/my-project/bq-export-app:v1.0.0"
+container_image = "gcr.io/my-project/bq-export-app:latest"
+
+# Additional Configuration Options
+# ------------------------------------
+# Note: The following variables are not currently used but are available for future use
+# Uncomment and modify as needed
+
+# Maximum number of concurrent requests per container
+# max_concurrent_requests = 80
+
+# Container memory allocation (in GB)
+# container_memory = "2Gi"
+
+# Container CPU allocation
+# container_cpu = "1000m" 

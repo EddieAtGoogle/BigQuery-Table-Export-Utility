@@ -1,0 +1,13 @@
+click>=8.0.0
+rich>=10.0.0
+requests>=2.25.0
+google-auth>=2.0.0
+google-auth-oauthlib>=0.4.0
+structlog>=23.1.0
+
+# Development dependencies
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.900
+pytest>=7.0.0
+pytest-cov>=3.0.0 
