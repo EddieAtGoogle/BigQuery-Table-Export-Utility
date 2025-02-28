@@ -20,7 +20,7 @@
 
 ## Overview
 
-The BigQuery Table Export Utility is a solution for efficiently and securely exporting large BigQuery tables to CSV format. 
+The BigQuery Table Export Utility is a solution for efficiently and securely exporting large BigQuery tables to CSV format. This utility leverages several [Google Cloud Platform services](https://cloud.google.com/docs/overview) to provide a robust, scalable solution.
 
 ### Key Features
 
@@ -53,18 +53,18 @@ The BigQuery Table Export Utility is a solution for efficiently and securely exp
 <td width="33%">
 
 #### Core Services
-- Google Cloud Run
-- BigQuery
-- Cloud Storage
-- Cloud IAM
+- [Google Cloud Run](https://cloud.google.com/run/docs/overview/what-is-cloud-run) - Serverless compute
+- [BigQuery](https://cloud.google.com/bigquery/docs/introduction) - Data warehouse
+- [Cloud Storage](https://cloud.google.com/storage/docs/introduction) - Object storage
+- [Cloud IAM](https://cloud.google.com/iam/docs/overview) - Access management
 
 </td>
 <td width="33%">
 
 #### Development
-- Python 3.9+
-- Terraform
-- Docker
+- [Python 3.9+](https://cloud.google.com/python/docs/getting-started)
+- [Terraform](https://cloud.google.com/docs/terraform)
+- [Docker](https://cloud.google.com/container-registry/docs/quickstart)
 - Git
 
 </td>
@@ -82,7 +82,7 @@ The BigQuery Table Export Utility is a solution for efficiently and securely exp
 
 ## Quick Start (15 minutes)
 
-The fastest way to get started is using the Cloud Run proxy for local development:
+The fastest way to get started is using the [Cloud Run proxy](https://cloud.google.com/run/docs/testing/local) for local development:
 
 1. Install prerequisites:
    ```bash
@@ -94,7 +94,7 @@ The fastest way to get started is using the Cloud Run proxy for local developmen
    brew install python@3.9  # macOS
    ```
 
-2. Authenticate with Google Cloud:
+2. Authenticate with Google Cloud ([Learn more about authentication](https://cloud.google.com/docs/authentication)):
    ```bash
    # Login to Google Cloud
    gcloud auth login
@@ -143,9 +143,9 @@ The fastest way to get started is using the Cloud Run proxy for local developmen
 
 #### Local Development with Cloud Run Proxy
 
-The Cloud Run proxy provides the easiest way to develop and test locally:
+The Cloud Run proxy provides the easiest way to develop and test locally. Learn more about [local development with Cloud Run](https://cloud.google.com/run/docs/testing/local).
 
-1. Configure Google Cloud project:
+1. Configure Google Cloud project ([Understanding projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)):
    ```bash
    # Set default project
    gcloud config set project YOUR_PROJECT_ID
@@ -159,7 +159,7 @@ The Cloud Run proxy provides the easiest way to develop and test locally:
        iam.googleapis.com
    ```
 
-2. Grant necessary permissions:
+2. Grant necessary permissions ([Understanding IAM roles](https://cloud.google.com/iam/docs/understanding-roles)):
    ```bash
    # Get your user account
    USER_EMAIL=$(gcloud config get-value account)
@@ -187,7 +187,7 @@ The Cloud Run proxy provides the easiest way to develop and test locally:
 
 #### Infrastructure Setup
 
-1. Configure Terraform:
+1. Configure Terraform ([Terraform on GCP fundamentals](https://cloud.google.com/docs/terraform/get-started-with-terraform)):
    ```bash
    cd terraform
    cp terraform.tfvars.example terraform.tfvars
@@ -197,7 +197,7 @@ The Cloud Run proxy provides the easiest way to develop and test locally:
    # region = "us-central1"
    ```
 
-2. Create Artifact Registry repository:
+2. Create Artifact Registry repository ([Understanding Artifact Registry](https://cloud.google.com/artifact-registry/docs/overview)):
    ```bash
    gcloud artifacts repositories create bq-export-app \\
        --repository-format=docker \\
@@ -233,17 +233,17 @@ The Cloud Run proxy provides the easiest way to develop and test locally:
 
 ### Authentication & Security
 
-The application uses Google Cloud's native authentication:
+The application uses Google Cloud's native authentication. Learn more about [GCP security best practices](https://cloud.google.com/security/best-practices):
 
 1. **Development Authentication**:
-   - Uses Cloud Run proxy for automatic authentication
-   - Leverages gcloud credentials
+   - Uses [Cloud Run proxy](https://cloud.google.com/run/docs/authenticating/developers) for automatic authentication
+   - Leverages [gcloud credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc)
    - No manual token management needed
 
 2. **Production Authentication**:
-   - IAM-based access control
-   - Role-based permissions
-   - Token validation and verification
+   - [IAM-based access control](https://cloud.google.com/run/docs/securing/managing-access)
+   - [Role-based permissions](https://cloud.google.com/iam/docs/understanding-roles)
+   - [Token validation](https://cloud.google.com/run/docs/securing/service-identity) and verification
 
 3. **Security Best Practices**:
    - No stored credentials
@@ -253,7 +253,7 @@ The application uses Google Cloud's native authentication:
 
 ### BigQuery Integration
 
-The export process follows these steps:
+The export process follows these steps. Learn more about [BigQuery best practices](https://cloud.google.com/bigquery/docs/best-practices-performance-output):
 
 1. **Export Initialization**:
    ```mermaid
@@ -285,7 +285,7 @@ The export process follows these steps:
 
 ### Cloud Run Architecture
 
-The serverless architecture provides several benefits:
+The serverless architecture provides several benefits. Learn more about [Cloud Run architecture](https://cloud.google.com/run/docs/about-instance-autoscaling):
 
 1. **Scalability**:
    - Automatic scaling based on load
@@ -306,6 +306,8 @@ The serverless architecture provides several benefits:
 
 ### CLI Commands
 
+For more information about working with command-line tools in GCP, see the [gcloud CLI overview](https://cloud.google.com/sdk/gcloud).
+
 ```bash
 # Start interactive session
 bq-export interactive
@@ -315,6 +317,8 @@ bq-export --help
 ```
 
 ### Environment Variables
+
+For more information about configuration in Cloud Run, see [setting environment variables](https://cloud.google.com/run/docs/configuring/environment-variables).
 
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
@@ -352,6 +356,11 @@ bq-export --help
 ## Troubleshooting
 
 ### Common Issues
+
+For comprehensive troubleshooting, refer to:
+- [Cloud Run troubleshooting guide](https://cloud.google.com/run/docs/troubleshooting)
+- [BigQuery troubleshooting guide](https://cloud.google.com/bigquery/docs/troubleshooting-queries)
+- [Cloud Storage troubleshooting](https://cloud.google.com/storage/docs/troubleshooting)
 
 1. **Authentication Errors**:
    ```bash
