@@ -10,9 +10,9 @@
 
 [Key Features](#key-features) •
 [Quick Start](#quick-start-15-minutes) •
-[Documentation](#documentation) •
-[Architecture](#technical-architecture) •
-[Security](#security-and-compliance)
+[Technical Deep Dives](#technical-deep-dives) •
+[Reference Guide](#reference-guide) •
+[Troubleshooting](#troubleshooting)
 
 </div>
 
